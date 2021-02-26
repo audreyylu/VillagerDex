@@ -54,7 +54,7 @@ async function getVillagers() {
                 const allVillagers = Object.values(JSON.parse(rawData));    // array of villager objects
 
                 for (let v of allVillagers) {                               // go through villagers
-                    let villager = new Villager(v.name["name-USen"], v.id, v.species, v.gender, v.personality, v.hobby, v["catch-phrase"], false);
+                    let villager = new Villager(v.name["name-USen"], v.id, v.species, v.gender, v.personality, v.hobby, v["catch-phrase"], v["icon_uri"], false);
                     villagers.push(villager); 
                 }
                 resolve();

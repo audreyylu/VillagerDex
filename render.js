@@ -26,29 +26,21 @@ Http.onreadystatechange = (e) => {
 
     for (let villager of responseObj) {
         console.log(villager.name);
+        console.log(villager.imageURL);
     }
 
     displayVillagers(responseObj);
 }
-
-// function displayVillagers(villagers) {
-//     const htmlString = villagers.map((villager) => {
-//         return `
-//         <li class="villager">
-//             <h2>${villager.name}</h2>
-//             <img src="${villager.image}"></img>
-//         </li>`; 
-//     }).join('');
-//     villagersList.innerHTML = htmlString; 
-// }
-
 
 function displayVillagers(villagers) {
     const htmlString = villagers.map((villager) => {
         return `
         <li class="villager">
             <h2>${villager.name}</h2>
+            <img src="${villager.imageURL}"></img>
         </li>`; 
     }).join('');
     villagersList.innerHTML = htmlString; 
 }
+
+
