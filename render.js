@@ -37,22 +37,26 @@ Http.onreadystatechange = (e) => {
 function displayVillagers(villagers) {
     const htmlString = villagers.map((villager) => {
         return `
-        <li class="villager">
-            <h2>${villager.name}</h2>
-            <img src="${villager.imageURL}"></img>
-        </li>`; 
+        <div id="villager">
+            
+            <img id="villager-image" src="${villager.imageURL}"></img>
+            <h3 id="villager-name">${villager.name}</h3>
+            <p id="villager-info">Species: ${villager.species}<br>
+            Gender: ${villager.gender}<br>
+            Personality: ${villager.personality}</p>
+
+        </div>`; 
     }).join('');
     villagersList.innerHTML = htmlString; 
 }
 
-// event: value in search bar
 searchBar.addEventListener('keyup', (e) => {
-    const searchValue =e.target.value;
+    const searchValue = e.target.value.toLowerCase(); 
 
     const filteredVillagers = villagersArray.filter( villager => {
-        return villager.name.includes(searchValue) || 
-        villager.species.includes(searchValue) || 
-        villager.personality.includes(searchValue);
+        return villager.name.toLowerCase().includes(searchValue) || 
+        villager.species.toLowerCase().includes(searchValue) || 
+        villager.personality.toLowerCase().includes(searchValue);
     })
     displayVillagers(filteredVillagers); 
 
