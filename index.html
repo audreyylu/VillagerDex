@@ -4,32 +4,90 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&display=swap" rel="stylesheet"> 
+
+
+    <style>
+
+        body {
+            background-image: url("background.jpg");
+        }
+        body, input, div {
+            font-family: 'Josefin Slab';
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap; 
+        }
+
+        li {
+            width: 150px; 
+            margin: 10px; 
+            border: 3px solid black; 
+            text-align: center; 
+            background-color: aqua;
+
+        }
+        img {
+            margin-left:auto;
+            margin-right:auto; 
+        }
+        #acnh_logo {
+            display: inline;
+            
+        }
+
+        #title {
+            
+            font-size: 5rem; 
+            
+            display: inline;
+            white-space: nowrap; 
+            padding-bottom: 50px;
+            
+        }
+
+        #search-bar {
+            height: 25px; 
+            width: 98%;
+            border-radius: 5px;
+            border: 2px solid springgreen; 
+            font-size: 15px;
+            padding: 5px 10px;
+        }
+
+        #container {
+            white-space: nowrap; 
+        }
+
+    </style>
+
     <title>VillagerDex</title>
 </head>
 
 <body>
+        
+       <div id="container">
+
+           <div id="acnh_logo">
+               <img src="acnh_logo.png" height="150" width="200"></img> 
+            </div>
+          
+            <div id="title"> ACNH VillagerDex</div>
+
+        </div> 
     
-    <div class="pageContainer">
+    <input type="text" name="searchBar" id="search-bar" placeholder="Search for a villager here">
 
-        <div class="header">
-            <img src="acnh_logo.png" height="210" width="350"></img>
-            <h1>ACNH VillagerDex</h1>
-        </div>
-        
-        <div id="searchBarContainer">
-            <input type="text" name="searchBar" id="search-bar" placeholder="Search for a villager here">
-        </div>
-
-        <ul id="villagersList"></ul>
-
-
-        
-    </div>
+    <ul id="villagersList"></ul>
 
     <script type="text/javascript" src="villager.js"></script>
     <script type="text/javascript" src="render.js"></script>
-
 
 </body>
 </html>

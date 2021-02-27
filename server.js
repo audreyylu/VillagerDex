@@ -10,6 +10,7 @@ async function createAndListenServer() {
         // handles server activity:
 
         console.log(req.url); 
+
         if (req.url == '/villagers') {
             console.log("inside req.url == './villagers'");
             res.writeHead(200, {'Content-Type': 'application/json'});

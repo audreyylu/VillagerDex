@@ -1,0 +1,11 @@
+ul {
+    display: flex;
+}
+
+li {
+    margin: 1em; 
+}
+
+body {
+    background-color:aqua;
+}

@@ -37,7 +37,7 @@ Http.onreadystatechange = (e) => {
 function displayVillagers(villagers) {
     const htmlString = villagers.map((villager) => {
         return `
-        <div id="villager">
+        <li id="villager">
             
             <img id="villager-image" src="${villager.imageURL}"></img>
             <h3 id="villager-name">${villager.name}</h3>
@@ -45,7 +45,7 @@ function displayVillagers(villagers) {
             Gender: ${villager.gender}<br>
             Personality: ${villager.personality}</p>
 
-        </div>`; 
+        </li>`; 
     }).join('');
     villagersList.innerHTML = htmlString; 
 }
